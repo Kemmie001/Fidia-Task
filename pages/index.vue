@@ -1,8 +1,14 @@
 <template>
   <div class="">
     <div class="main_container">
+
       <div class="flex justify-between">
-        <div class="right-asset">
+        <div class="">
+          <div class="right-asset flex justify-center">
+            <div class="side-line">
+            </div>
+          </div>
+
         </div>
         <div class="">
           <div class="stripe-logo">
@@ -21,14 +27,27 @@
                 <h1 class="">Password</h1>
                 <a class="colored-link">Forgot your password?</a>
               </span>
-              <input type="password" class="form-input py-4"><br>
+              <div class="relative">
+                <input type="password" class="form-input py-4">
+                <svg class="password-eye" width="16" height="17" viewBox="0 0 16 17" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M8 14.968C3.582 14.968 0 10.282 0 8.96802C0 7.65402 3.582 2.96802 8 2.96802C12.418 2.96802 16 7.65402 16 8.96802C16 10.282 12.418 14.968 8 14.968ZM8 12.968C9.06087 12.968 10.0783 12.5466 10.8284 11.7964C11.5786 11.0463 12 10.0289 12 8.96802C12 7.90715 11.5786 6.88974 10.8284 6.13959C10.0783 5.38944 9.06087 4.96802 8 4.96802C6.93913 4.96802 5.92172 5.38944 5.17157 6.13959C4.42143 6.88974 4 7.90715 4 8.96802C4 10.0289 4.42143 11.0463 5.17157 11.7964C5.92172 12.5466 6.93913 12.968 8 12.968ZM8 10.968C7.46957 10.968 6.96086 10.7573 6.58579 10.3822C6.21071 10.0072 6 9.49845 6 8.96802C6 8.43758 6.21071 7.92888 6.58579 7.5538C6.96086 7.17873 7.46957 6.96802 8 6.96802C8.53043 6.96802 9.03914 7.17873 9.41421 7.5538C9.78929 7.92888 10 8.43758 10 8.96802C10 9.49845 9.78929 10.0072 9.41421 10.3822C9.03914 10.7573 8.53043 10.968 8 10.968Z"
+                    fill="#A3ACB9" />
+                </svg>
+              </div>
+
+
+              <br>
               <div class="pt-4">
                 <input type="checkbox" class="checkbox-input" name="" id="">
                 Stay signed in for a week
               </div>
-              <button class="form_button">
-                Continue
-              </button>
+              <nuxtLink to="/dashboard">
+                <button class="form_button">
+                  Continue
+                </button>
+              </nuxtLink>
               <div class="text-center">
                 <a href="#" class="colored-link">Use single sign on (SSO) instead</a>
               </div>
@@ -41,16 +60,18 @@
               <li class="">© Stripe</li>
               <li class="px-2">. &nbsp; Contact</li>
               <li class="">. Privacy & terms</li>
+
             </ul>
           </div>
         </div>
-        <div class="left-asset">
+        <div class="left-asset flex justify-center">
+          <div class="side-line">
+          </div>
         </div>
       </div>
-      <div class="side-line right-line">
-      </div>
-      <div class="side-line left-line">
-      </div>
+
+      <!-- <div class="side-line left-line">
+      </div> -->
     </div>
   </div>
 </template>
@@ -80,38 +101,14 @@
     background: linear-gradient(172deg, #F7FAFC 60%, #0c00fa80 5% 65%, #ffffff 65%);
     width: 314px;
     height: 100vh;
-    z-index: 3;
-    position: relative;
   }
 
-  .right-asset::after {
-    background: linear-gradient(172deg, #F7FAFC 60%, #81E9FF 5% 65%, #ffffff 65%);
-    width: 214px;
-    height: 100vh;
-    opacity: 0.4;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
 
   .side-line {
-    position: fixed;
-    right: 0;
-    top: 0%;
-    bottom: 0%;
     opacity: 0.7;
-    border: 1px solid #E3E8EE;
-  }
-
-  .left-line {
-    left: 87.5%;
-  }
-
-  .right-line {
-    left: 12.5%;
+    width: 1px;
+    height: 100vh;
+    background-color: #E3E8EE;
   }
 
   .stripe-logo {
@@ -123,12 +120,10 @@
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12), 0px 15px 35px rgba(60, 66, 87, 0.08);
     border-radius: 4px;
     margin: 0 auto;
-    position: static;
     width: 542px;
     height: 537px;
     padding: 48px 68px 72px;
     color: #3C4257;
-    z-index: 5;
   }
 
 
@@ -138,18 +133,17 @@
       box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.12), 0px 15px 35px rgba(60, 66, 87, 0.08);
       border-radius: 4px;
       margin: 0 auto;
-      position: static;
       width: 90%;
       height: 537px;
       padding: 18px 38px 42px;
       color: #3C4257;
-      z-index: 5;
     }
   }
 
   .colored-link {
     color: #635CFF;
     font-size: 14px;
+    cursor: s;
   }
 
   .form-title {
@@ -164,10 +158,17 @@
     margin-top: 0.5rem;
     border-radius: 5px;
     width: 100%;
+    outline: none;
   }
 
   .form-input::placeholder {
     color: #3C4257;
+  }
+
+  .password-eye {
+    position: absolute;
+    top: 35%;
+    left: 90%;
   }
 
   .checkbox-input {
