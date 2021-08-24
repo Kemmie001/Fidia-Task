@@ -40,6 +40,10 @@ export default {
   modules: [
   ],
 
+  generate: {
+    fallback: true
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
