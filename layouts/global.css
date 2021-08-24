@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "SF Pro Regular";
+    src: local("FontsFree-Net-SFProText-Regular-1"),
+    url(../static/FontsFree-Net-SFProText-Regular-1.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "SF Pro Display";
+    src: local("FontsFree-Net-SFProDisplay-MediumItalic"),
+    url(../static/FontsFree-Net-SFProDisplay-MediumItalic.ttf) format("truetype");
+}
+
